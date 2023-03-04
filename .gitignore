@@ -1,8 +1,0 @@
-.github
-docs
-.dockerignore
-.gitignore
-docker-compose.yml
-Dockerfile
-mkdocs.yml
-requirements.txt
