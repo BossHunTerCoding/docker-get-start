@@ -1,2 +1,12 @@
 node_modules
 app/Dockerfile
+
+.github
+docs
+.dockerignore
+.gitignore
+build.sh
+docker-compose.
+Dockerfile
+mkdocs.yml
+requirements.txt
