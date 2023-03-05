@@ -1,50 +1,44 @@
-# [Docker Getting Started Tutorial](https://docs.docker.com/get-started/)
+# Docker Getting Started Tutorial
 
-## requiements
-[Docker Dosktop](https://www.docker.com/)
-[Accout Docker Hub](https://hub.docker.com/)
+This tutorial was written with the intent of helping folks get up and running
+with containers and is designed to work with Docker Desktop. While not going too much 
+into depth, it covers the following topics:
+
+- Running your first container
+- Building containers
+- Learning what containers are
+- Running and removing containers
+- Using volumes to persist data
+- Using bind mounts to support development
+- Using container networking to support multi-container applications
+- Using Docker Compose to simplify the definition and sharing of applications
+- Using image layer caching to speed up builds and reduce push/pull size
+- Using multi-stage builds to separate build-time and runtime dependencies
 
 ## Getting Started
 
-1. Before you can run the application, you need to get the application source code onto your machine:
+If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
 
 ```bash
-git clone https://github.com/BossHunTerCoding/docker-get-start.git
+docker run -d -p 80:80 docker/getting-started
 ```
 
-2. In the `app` directory, the same location as the `package.json` file,  `Dockerfile`. In the Windows Command Prompt, run the following commands listed below:
+Once it has started, you can open your browser to [http://localhost](http://localhost).
+
+## Development
+
+This project has a `docker-compose.yml` file, which will start the mkdocs application on your
+local machine and help you see changes instantly.
+
 ```bash
-cd docker-get-start/app/
+docker compose up
 ```
 
-3. Build the container image. (In terminal much In the `app` directory), with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker build -t {the_name_image} .
-```
+## Contributing
 
-4. Start your container using the docker run command and specify the name of the image you just created. (In terminal much In the `app` directory), with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker run --name {the_name_container} -dp {portout}:3000 {the_name_image}
-```
+If you find typos or other issues with the tutorial, feel free to create a PR and suggest fixes!
 
-5. Update the source code, can update in `app>src` (In terminal much In the `app` directory)
-check list docker:
-```bash
-docker ps -l
-```
-container much stop running, with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker stop {CONTAINER ID}
-```
-remove container, with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker rm {CONTAINER ID}
-```
-update image, with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker build -t {the_same_name_image_your_build} .
-```
-start container again, with the fields enclosed by brackets "{}" replaced with your fields. (Don't include the brackets!):
-```bash
-docker run --name {the_name_container} -dp {portout}:3000 {the_name_image}
-```
+If you have ideas on how to make the tutorial better or want to suggest adding new content, please open an 
+issue first before working on your idea. While we love input, we want to keep the tutorial scoped to new-comers.
+As such, we may reject ideas for more advanced requests and don't want you to lose any work you might
+have done. So, ask first and we'll gladly hear your thoughts!
